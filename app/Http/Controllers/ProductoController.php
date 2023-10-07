@@ -41,6 +41,12 @@ class ProductoController extends Controller
             ));
         }
 
+        if($request->has('id')){
+            $object=Producto::find($request->input('id'));
+        }
+        else{
+            $object=new Producto();
+        }
         $object=new Producto();
         $object->nombre=$request->input("nombre");
         $object->descripcion=$request->input("descripcion");

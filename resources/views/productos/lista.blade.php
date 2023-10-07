@@ -40,8 +40,12 @@
                                         
                                     </td>
                                     <td>{{date("d/m/Y",strtotime($p->created_at))}}</td>
-                                    <td><a href="{{route('productos.edit',[$p->id])}}" class='btn btn-success'><i class="fa fa-pencil"></i></a></td>
-                                </tr>
+                                    <td>
+                                        <form action="{{route('productos.destroy',[$p->id])}}" id="form_eliminar_{{$p->id}}" method="post">
+                                        <a href="{{route('productos.edit',[$p->id])}}" class='btn btn-success'><i class="fa fa-pencil"></i></a>
+                                        <a href="javascript:eliminar({{$p->id}})" class='btn btn-danger'><i class="fa fa-trash"></i></a>
+                                    </td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>
@@ -72,6 +76,15 @@
         $('#bootstrap-data-table-export').DataTable();
     } );
     </script>
+    <script>
+        funcion eliminar(id){
+            var resp = confirm("Desea realmente eliminar el producto?")
+            if(resp){
+                alert(id)
+            }
+        }
+    </script>
+
 @endsection
 
 
