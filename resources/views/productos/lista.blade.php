@@ -40,7 +40,7 @@
                                         
                                     </td>
                                     <td>{{date("d/m/Y",strtotime($p->created_at))}}</td>
-                                    <td><a class = 'btn btn-success'><i class="fa fa-pencil"></i></a></td>
+                                    <td><a href="{{route('productos.edit',[$p->id])}}" class='btn btn-success'><i class="fa fa-pencil"></i></a></td>
                                 </tr>
                                 @endforeach
                             </tbody>

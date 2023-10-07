@@ -22,6 +22,12 @@ class ProductoController extends Controller
         $categorias=Categoria::all();
         return view("productos.create")->with(array("categorias"=>$categorias));
     }
+    public function edit($id){
+        $data["objeto"] = Producto::find($id);
+        $data["categorias"] = Categoria::all();
+
+        return view("productos.create")->with($data);
+    }
     public function store(Request $request){
        // return"hola mundo";
         $validacion=Validator::make($request->all(),[

@@ -14,7 +14,7 @@
                                    {{csrf_field()}}
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nombre</label></div>
-                                        <div class="col-12 col-md-9"><input type="text" id="text-input" name="nombre" placeholder="Ingrese nombre" class="form-control"><small class="form-text text-muted"></small></div>
+                                        <div class="col-12 col-md-9"><input value="{{isset($objeto) ? $objeto->nombre : ''}}" type="text" id="text-input" name="nombre" placeholder="Ingrese nombre" class="form-control"><small class="form-text text-muted"></small></div>
                                     </div>
                                     
                                     <div class="row form-group">
