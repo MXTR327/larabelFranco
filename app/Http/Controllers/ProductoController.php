@@ -47,7 +47,7 @@ class ProductoController extends Controller
         else{
             $object=new Producto();
         }
-        $object=new Producto();
+        
         $object->nombre=$request->input("nombre");
         $object->descripcion=$request->input("descripcion");
         $object->precio=$request->input("precio");
